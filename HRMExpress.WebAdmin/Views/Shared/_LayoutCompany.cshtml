@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Ampcus HRM</title>
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="~/Content/elegant-icons-style.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- full calendar css-->
+    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <!-- easy pie chart-->
+    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="~/Content/owl.carousel.css" type="text/css">
+    <!-- Custom styles -->
+    <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/style-responsive.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/bundles/angular")
+
+
+
+
+</head>
+
+<body>
+    <div>
+        @*<header class="header white-bg">
+
+         
+        </header>*@
+        <!--header end-->
+        <!--sidebar start-->
+        <aside >
+            <div id="sidebar" class="nav-collapse " style="background-color:grey">
+                <!-- sidebar menu start-->
+                @*<ul class="sidebar-menu">
+                    <li class="active">
+                        <a class="" href="">
+                            <i class="icon_house_alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon_desktop"></i>
+                            <span></span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="general.html">Silver</a></li>
+                            <li><a class="" href="buttons.html">Gold</a></li>
+                            <li><a class="" href="grids.html">Platinum</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="" href="">
+                            <i class="icon_genius"></i>
+                            <span>Client List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="">
+                            <i class="icon_genius"></i>
+                            <span>Client List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="">
+                            <i class="icon_genius"></i>
+                            <span>Client List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="">
+                            <i class="icon_genius"></i>
+                            <span>Client List</span>
+                        </a>
+                    </li>
+
+
+                </ul>*@
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <section id="main-content">
+            <section class="wrapper">
+
+                @RenderBody()
+
+            </section>
+        </section>
+    </div>
+
+    <!-- container section start -->
+    <!-- javascripts -->
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- bootstrap -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="~/Content/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- charts scripts -->
+    <script src="~/Content/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="~/Content/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="~/Content/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="~/Content/js/owl.carousel.js"></script>
+    <!-- jQuery full calendar -->
+    <script src="~/Content/assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+    <!--script for this page only-->
+    <script src="~/Content/js/calendar-custom.js"></script>
+    <!-- custom select -->
+    <script src="~/Content/js/jquery.customSelect.min.js"></script>
+    <!--custome script for all page-->
+    <script src="~/Content/js/scripts.js"></script>
+    <!-- custom script for this page-->
+    <script src="~/Content/js/sparkline-chart.js"></script>
+    <script src="~/Content/js/easy-pie-chart.js"></script>
+    <script>
+
+        //knob
+        $(function () {
+            $(".knob").knob({
+                'draw': function () {
+                    $(this.i).val(this.cv + '%')
+                }
+            })
+        });
+
+        //carousel
+        $(document).ready(function () {
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+            });
+        });
+
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+    </script>
+
+
+    @*<script>
+
+                var demoApp = angular.module("DemoApp", []);
+                //demoApp.controller("myController1", function ($scope) {
+                //    $scope.name = "Test DemoApp";
+                //});
+
+                demoApp.controller('myController1', function ($scope, ContactService) { //inject ContactService
+                    $scope.Contact = null;
+                    ContactService.GetCompanyDetails().then(function (d) {
+                        $scope.Contact = d.data; // Success
+                        $scope.namedemo = d.data.name;
+                    }, function () {
+                        alert('Failed'); // Failed
+                    });
+                })
+        .factory('ContactService', function ($http) { // here I have created a factory which is a populer way to create and configure services
+
+            var fac = {};
+            fac.GetCompanyDetails = function () {
+
+                return $http.get('/CompanyMaster/GetCompanyDetails');
+            }
+            return fac;
+        });
+
+
+
+            </script>*@
+
+    @*<script src="~/Scripts/AngularController/MasterPage.js"></script>*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

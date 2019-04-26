@@ -1,0 +1,15 @@
+D:\TestAngular\HRMExpress\HRMExpress\bin\Debug\HRMExpress.dll
+D:\TestAngular\HRMExpress\HRMExpress\bin\Debug\HRMExpress.pdb
+D:\TestAngular\HRMExpress\HRMExpress\obj\Debug\HRMExpress.csprojResolveAssemblyReference.cache
+D:\TestAngular\HRMExpress\HRMExpress\obj\Debug\HRMExpress.dll
+D:\TestAngular\HRMExpress\HRMExpress\obj\Debug\HRMExpress.pdb
+E:\TestAngular\HRMExpress\HRMExpress\bin\Debug\HRMExpress.dll
+E:\TestAngular\HRMExpress\HRMExpress\bin\Debug\HRMExpress.pdb
+E:\TestAngular\HRMExpress\HRMExpress\obj\Debug\HRMExpress.csprojResolveAssemblyReference.cache
+E:\TestAngular\HRMExpress\HRMExpress\obj\Debug\HRMExpress.dll
+E:\TestAngular\HRMExpress\HRMExpress\obj\Debug\HRMExpress.pdb
+E:\TestAngular\HRMExpress\HRMExpress\bin\Debug\HRMExpress.dll.config
+E:\TestAngular\HRMExpress\HRMExpress\bin\Debug\EntityFramework.dll
+E:\TestAngular\HRMExpress\HRMExpress\bin\Debug\EntityFramework.SqlServer.dll
+E:\TestAngular\HRMExpress\HRMExpress\bin\Debug\EntityFramework.xml
+E:\TestAngular\HRMExpress\HRMExpress\bin\Debug\EntityFramework.SqlServer.xml

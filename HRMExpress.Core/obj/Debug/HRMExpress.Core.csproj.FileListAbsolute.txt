@@ -1,0 +1,15 @@
+D:\TestAngular\HRMExpress\HRMExpress.Core\obj\Debug\HRMExpress.Core.csprojResolveAssemblyReference.cache
+D:\TestAngular\HRMExpress\HRMExpress.Core\bin\Debug\HRMExpress.Core.dll
+D:\TestAngular\HRMExpress\HRMExpress.Core\bin\Debug\HRMExpress.Core.pdb
+D:\TestAngular\HRMExpress\HRMExpress.Core\obj\Debug\HRMExpress.Core.dll
+D:\TestAngular\HRMExpress\HRMExpress.Core\obj\Debug\HRMExpress.Core.pdb
+E:\TestAngular\HRMExpress\HRMExpress.Core\bin\Debug\HRMExpress.Core.dll
+E:\TestAngular\HRMExpress\HRMExpress.Core\bin\Debug\HRMExpress.Core.pdb
+E:\TestAngular\HRMExpress\HRMExpress.Core\obj\Debug\HRMExpress.Core.csprojResolveAssemblyReference.cache
+E:\TestAngular\HRMExpress\HRMExpress.Core\obj\Debug\HRMExpress.Core.dll
+E:\TestAngular\HRMExpress\HRMExpress.Core\obj\Debug\HRMExpress.Core.pdb
+D:\HRMExpress-MVC-Arch\HRMExpress.Core\bin\Debug\HRMExpress.Core.dll
+D:\HRMExpress-MVC-Arch\HRMExpress.Core\bin\Debug\HRMExpress.Core.pdb
+D:\HRMExpress-MVC-Arch\HRMExpress.Core\obj\Debug\HRMExpress.Core.csprojResolveAssemblyReference.cache
+D:\HRMExpress-MVC-Arch\HRMExpress.Core\obj\Debug\HRMExpress.Core.dll
+D:\HRMExpress-MVC-Arch\HRMExpress.Core\obj\Debug\HRMExpress.Core.pdb

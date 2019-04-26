@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        <!--overview start-->
+      
+        <!--overview end-->
+        <!-- project team & activity start -->
+
+  <div ng-app="MyApp" ng-controller="myController" class="row">
+    
+    <div class="col-lg-8">
+        <!--Project Activity start-->
+        <section class="panel">
+            <div class="panel-body progress-panel">
+                <div class="row">
+                    <div class="col-lg-8 task-progress pull-left">
+                        <h1>Client List</h1>
+                    </div>
+                    <div class="col-lg-4">
+                        <span class="profile-ava pull-right">
+                            @*<img alt="" class="simple" src="img/avatar1_small.jpg">
+                                John Doe*@
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-hover personal-task">
+                <thead>
+                    <tr class="dark">
+                        <th></th>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>HRM Plan</th>
+                        <th>Payment Type</th>
+                        
+                        <th>Detail View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items">
+                        <td><img height="30" width="100" ng-src={{item.PageLogo}} /></td>
+                        <td>{{item.Code}}</td>
+                        <td><strong>{{item.Name}}</strong></td>
+                        <td>{{item.Email}}</td>
+                        <td>{{item.HRMPlan}}</td>                        
+                        <td>{{item.PaymentType}}</td>
+                        
+
+
+
+                        <td class="text-left">
+                            @*<button  type="button" class="btn btn-warning btn-sm fs12" data-toggle="modal" data-target="#tempAssign" ng-click="GetCompanyDetails(item.CompanyID);">View</button>*@
+
+
+                            <a class="btn btn-warning btn-sm fs12" data-ng-href="@Url.Action("CompanyDetails", "CompanyMaster")?CompanyID={{item.CompanyID}}">View  </a>
+
+                            @*@Html.ActionLink("BView", "Index", "CompanyMaster", new { CompanyID = 11 }, null);*@
+
+                        </td>
+
+                    </tr>
+                </tbody>
+
+
+            </table>
+           
+        </section>
+        <!--Project Activity end-->
+    </div>
+</div>
+
+        <!-- project team & activity end -->
+   
+
+@section scripts{
+
+    <script>
+        var myApp = angular.module("MyApp", []);
+
+        var information = {
+            Name: "Angular Js ",
+            items: []
+        };
+        myApp.run(function ($http) {
+            
+            $http.get('@Url.Action("GetAllCompanies", "CompanyMaster")').success(function (data) {
+                //alert(data);
+                angular.forEach(data, function (event, key) {
+
+                    //information.items.push({ PageLogo: event.PageLogo, Code: event.Code, Name: event.Name, Email: event.Email, HRMPlan: event.HRMPlan, StartDate: event.StartDate, EndDate: event.EndDate, CompanyID: Eve.CompanyID });
+                    information.items.push({ PageLogo: event.PageLogo, Code: event.Code, Name: event.Name, Email: event.Email, HRMPlan: event.HRMPlan, CompanyID: event.CompanyID, PaymentType: event.PaymentType, PaymentStatus: event.PaymentStatus });
+                    //alert(event.Name);
+                });
+            });
+
+        });
+       
+
+        myApp.controller("myController", function ($scope) {
+
+            // $scope.EmployeeName = information.Name;
+            $scope.items = information.items;
+            
+
+        });
+    </script>
+}
+
+

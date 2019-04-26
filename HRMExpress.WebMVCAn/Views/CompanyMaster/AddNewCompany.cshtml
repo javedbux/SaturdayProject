@@ -1,0 +1,327 @@
+﻿@{
+    ViewBag.Title = "AddNewCompany";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div ng-app="MyApp" ng-controller="myController" class="row">
+
+    <div class="row">
+        <!-- profile-widget -->
+      
+    </div>
+    <!-- page start-->
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading tab-bg-info">
+                    <ul class="nav nav-tabs">
+
+                        @*<li class="">
+                            <a data-toggle="tab" href="#profile">
+                                <i class="icon-user"></i>
+                                Profile
+                            </a>
+                        </li>*@
+                        <li class="active">
+                            <a data-toggle="tab" href="#edit-profile">
+                                <i class="icon-envelope"></i>
+                                New Client Profile
+                            </a>
+                        </li>
+
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+
+                        <!-- profile -->
+                        <div id="profile" class="tab-pane ">
+                            <section class="panel">
+                                @*<div class="bio-graph-heading">
+                                        Hello I’m John Smith, a leading expert in interactive and creative design specializing in the mobile medium. My graduation from Massey University with a Bachelor of Design majoring in visual communication.
+                                    </div>*@
+                                <div class="panel-body bio-graph-info">
+                                    <h1>Details</h1>
+                                    <div class="row">
+                                        <div class="bio-row">
+                                            <p><span>Code </span>: {{Contact.Code}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Client Name </span>: {{Contact.Name}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Email</span>: {{Contact.Email}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Website </span>: {{Contact.Website}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>ContactPerson </span>: {{Contact.ContactPerson}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>ContactNo </span>: {{Contact.ContactNo}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>AlternateNo </span>: {{Contact.AlternateNo}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Address </span>:  {{Contact.Address}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>City </span>:  {{Contact.City}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>State </span>:  {{Contact.State}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Country </span>:  {{Contact.Country}}</p>
+                                        </div>
+
+                                        <div class="bio-row">
+                                            <p><span>Payment Type </span>:  {{Contact.PaymentType}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Payment Status </span>:  {{Contact.PaymentStatus}}</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Active </span>:  {{Contact.Active}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="row">
+                                </div>
+                            </section>
+                        </div>
+                        <!-- edit-profile -->
+                        <div id="edit-profile" class="tab-pane active">
+                            <section class="panel">
+                                <div class="panel-body bio-graph-info">
+                                    <h1>Add Client Info</h1>
+                                    <form class="form-horizontal" name="f1" ng-submit="SaveData(Client)">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Code</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" ng-model="Client.Code" class="form-control" id="f-name" placeholder={{Contact.Code}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Name</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" ng-model="Client.Name" class="form-control" id="l-name" placeholder={{Contact.Name}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Email</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.Email" id="l-name" placeholder={{Contact.Email}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Website</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.Website" id="l-name" placeholder={{Contact.Website}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">ContactPerson</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.ContactPerson" id="l-name" placeholder={{Contact.ContactPerson}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">ContactNo</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.ContactNo" id="l-name" placeholder={{Contact.ContactNo}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">AlternateNo</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.AlternateNo" id="l-name" placeholder={{Contact.AlternateNo}}>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Address</label>
+                                            <div class="col-lg-10">
+                                                <textarea name="" id="" class="form-control" cols="30" ng-model="Client.Address" rows="5" placeholder={{Contact.Address}}></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">City</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.City" id="l-name" placeholder={{Contact.City}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">State</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.State" id="l-name" placeholder={{Contact.State}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Country</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.Country" id="l-name" placeholder={{Contact.Country}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">PageTitle</label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" ng-model="Client.PageTitle" id="l-name" placeholder={{Contact.PageTitle}}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">HRMPlan</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" tabindex="5" ng-model="Client.HRMPlan">
+                                                    <option>
+                                                        Gold
+                                                    </option>
+                                                    <option>
+                                                        Silver
+                                                    </option>
+                                                    <option>
+                                                        Platinum
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">PaymentType</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" tabindex="5" ng-model="Client.PaymentType">
+                                                    <option>
+                                                        Yearly
+                                                    </option>
+                                                    <option>
+                                                        Quarterly
+                                                    </option>
+                                                    <option>
+                                                        Monthly
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">PaymentStatus</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" tabindex="5" ng-model="Client.PaymentStatus">
+                                                    <option>
+                                                        Paid
+                                                    </option>
+                                                    <option>
+                                                        UnPaid
+                                                    </option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-2 col-lg-10">
+                                                @*<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>*@
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                                <button type="button" class="btn btn-danger">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    @*<script src="~/Scripts/AngularController/CompanyMasterController.js"></script>*@
+    <script>
+
+        var myApp = angular.module("MyApp", []);
+        
+        myApp.controller('myController', function ($scope, RegistrationService) { //explained about controller in Part 2
+            //Default Variable
+            alert("Test1");
+     $scope.submitText = "Save";
+     $scope.submitted = false;
+     $scope.message = '';
+     $scope.isFormValid = false;
+     $scope.User = {
+         Code: '',
+         Name: '',
+         FullName: '',
+         EmailID: '',
+         Gender: ''
+     };
+     //Check form Validation // here f1 is our form name
+     $scope.$watch('f1.$valid', function (newValue) {
+         $scope.isFormValid = newValue;
+     });
+     //Save Data
+     $scope.SaveData = function (data) {
+         alert(data.Code);
+         if ($scope.submitText == 'Save') {
+             $scope.submitted = true;
+             $scope.message = '';
+
+             if ($scope.isFormValid) {
+                 $scope.submitText = 'Please Wait...';
+                 $scope.User = data;
+                 RegistrationService.SaveFormData($scope.User).then(function (d) {
+                     alert(d);
+                     if (d == 'Success') {
+                         //have to clear form here
+                         ClearForm();
+                     }
+                     $scope.submitText = "Save";
+                 });
+             }
+             else {
+                 $scope.message = 'Please fill required fields value';
+             }
+         }
+     }
+     //Clear Form (reset)
+     function ClearForm() {
+         $scope.User = {};
+         $scope.f1.$setPristine(); //here f1 our form name
+         $scope.submitted = false;
+     }
+ })
+ .factory('RegistrationService', function ($http, $q) { //explained about factory in Part 2
+     //here $q is a angularjs service with help us to run asynchronous function and return result when processing done
+     var fac = {};
+     fac.SaveFormData = function (data) {
+         var defer = $q.defer();
+         $http({
+             url: '/CompanyMaster/AddUpdateCompany',
+             method: 'POST',
+             data: JSON.stringify(data),
+             headers: { 'content-type': 'application/json' }
+         }).success(function (d) {
+             // Success callback
+             defer.resolve(d);
+         }).error(function (e) {
+             //Failed Callback
+             alert('Error!');
+             defer.reject(e);
+         });
+         return defer.promise;
+     }
+     return fac;
+ });
+
+
+    </script>
+
+
+
+}

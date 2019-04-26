@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+
+<html >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Ampcus HRM</title>
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="~/Content/elegant-icons-style.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- full calendar css-->
+    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <!-- easy pie chart-->
+    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="~/Content/owl.carousel.css" type="text/css">
+    <!-- Custom styles -->
+    <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/style-responsive.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/bundles/angular")
+
+    
+
+    
+</head>
+
+<body ng-app="DemoApp">
+    <div ng-controller="myController">
+        <header class="header white-bg">
+
+            <div>
+
+
+                <div class="toggle-nav">
+                    <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+                </div>
+                <!--logo start-->
+                <div class="col-lg-2 col-sm-2">
+                    @*<h4>{{Contact.PageTitle}}</h4>*@
+                    <div class="">
+                        <img ng-src={{Contact.PageLogo}} alt="" style="width:auto; max-width:30%;height:auto;">
+                    </div>
+                </div>
+                <a href="index.html" class="logo"><span></span><span class="lite">{{Contact.Name}}</span></a>
+
+                <!--logo end-->
+
+                <div class="nav search-row" id="top_menu">
+                    <!--  search form start -->
+                    @*<ul class="nav top-menu">
+                            <li>
+                                <form class="navbar-form">
+                                    <input class="form-control" placeholder="Search" type="text">
+                                </form>
+                            </li>
+                        </ul>*@
+                    <!--  search form end -->
+                </div>
+                <div class="top-nav notification-row">
+                    <!-- notificatoin dropdown start-->
+                    <ul class="nav pull-right top-menu">
+
+
+                        <!-- user login dropdown start-->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="profile-ava">
+                                    @*<img alt="" src="img/avatar1_small.jpg">*@
+                                </span>
+                                <span class="username">{{Contact.ContactPerson}}</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu extended logout">
+                                <div class="log-arrow-up"></div>
+                                @*<li class="eborder-top">
+                                    <a href="#"><i class="icon_profile"></i> My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon_chat_alt"></i> Chats</a>
+                                </li>*@
+                                <li>
+                                    <a href=@Url.Action("Login", "User")> Log Out</a>
+                                </li>
+                                @*<li>
+                                    <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+                                </li>
+                                <li>
+                                    <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+                                </li>*@
+                            </ul>
+                        </li>
+                        <!-- user login dropdown end -->
+                    </ul>
+                    <!-- notificatoin dropdown end-->
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu">
+                    <li class="active">
+                        <a class="" >
+                            
+                            <span>Menus</span>
+                        </a>
+                    </li>
+                    @*<li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon_desktop"></i>
+                            <span>New SetUp</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="general.html">Silver</a></li>
+                            <li><a class="" href="buttons.html">Gold</a></li>
+                            <li><a class="" href="grids.html">Platinum</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="" href="widgets.html">
+                            <i class="icon_genius"></i>
+                            <span>Client List</span>
+                        </a>
+                    </li>*@
+
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <section id="main-content">
+            <section class="wrapper">
+
+                <div class="row">
+
+                    <div class="row">
+                        <!-- profile-widget -->
+                        <div class="col-lg-12">
+                            <div class="profile-widget profile-widget-info">
+                                <div class="panel-body">
+                                   
+                                    <div class="col-lg-4 col-sm-4 follow-info">
+                                        @*<p>Hello I’m John Smith, a leading expert in interactive and creative design.</p>
+                                            <p>johnsmith</p>*@
+                                        @*<h6>
+                                                <span><i class="icon_clock_alt"></i>11:05 AM</span>
+                                                <span><i class="icon_calendar"></i>25.10.13</span>
+                                                <span><i class="icon_pin_alt"></i>NY</span>
+                                            </h6>*@
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 follow-info weather-category">
+                                        <ul>
+                                            <li class="active">
+                                                <h4>HRM Package</h4>
+                                                <i ></i> {{Contact.HRMPlan}}
+                                            </li>
+                                            <li>
+                                                <h4>Start Date</h4>
+                                                <i ></i> {{Contact.StartDate}}
+                                            </li>
+                                            <li>
+                                                <h4>End Date</h4>
+                                                <i ></i> {{Contact.EndDate |date:'mm/dd/yyyy'}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- page start-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <section class="panel">
+                                <header class="panel-heading tab-bg-info">
+                                    <ul class="nav nav-tabs">
+
+                                        <li class="active">
+                                            <a data-toggle="tab" href="#profile">
+                                                <i class="icon-user"></i>
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a data-toggle="tab" href="#edit-profile">
+                                                <i class="icon-envelope"></i>
+                                                Edit Profile
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </header>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+
+                                        <!-- profile -->
+                                        <div id="profile" class="tab-pane active">
+                                            <section class="panel">
+                                                @*<div class="bio-graph-heading">
+                                                        Hello I’m John Smith, a leading expert in interactive and creative design specializing in the mobile medium. My graduation from Massey University with a Bachelor of Design majoring in visual communication.
+                                                    </div>*@
+                                                <div class="panel-body bio-graph-info">
+                                                    <h1>Details</h1>
+                                                    <div class="row">
+                                                        <div class="bio-row">
+                                                            <p><span>Code </span>: {{Contact.Code}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>Client Name </span>: {{Contact.Name}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>Email</span>: {{Contact.Email}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>Website </span>: {{Contact.Website}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>ContactPerson </span>: {{Contact.ContactPerson}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>ContactNo </span>: {{Contact.ContactNo}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>AlternateNo </span>: {{Contact.AlternateNo}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>Address </span>:  {{Contact.Address}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>City </span>:  {{Contact.City}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>State </span>:  {{Contact.State}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>Country </span>:  {{Contact.Country}}</p>
+                                                        </div>
+
+                                                        <div class="bio-row">
+                                                            <p><span>Payment Type </span>:  {{Contact.PaymentType}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>Payment Status </span>:  {{Contact.PaymentStatus}}</p>
+                                                        </div>
+                                                        <div class="bio-row">
+                                                            <p><span>Active </span>:  {{Contact.Active}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div class="row">
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <!-- edit-profile -->
+                                        <div id="edit-profile" class="tab-pane">
+                                            <section class="panel">
+                                                <div class="panel-body bio-graph-info">
+                                                    <h1> Profile Info</h1>
+                                                    <form class="form-horizontal" ng-submit="Login()">
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">Code</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="f-name" placeholder={{Contact.Code}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">Name</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.Name}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">Email</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.Email}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">Website</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.Website}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">ContactPerson</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.ContactPerson}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">ContactNo</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.ContactNo}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">AlternateNo</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.AlternateNo}}>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">Address</label>
+                                                            <div class="col-lg-10">
+                                                                <textarea name="" id="" class="form-control" cols="30" rows="5" placeholder={{Contact.Address}}></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">City</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.City}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">State</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.State}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">Country</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.Country}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">PageTitle</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.PageTitle}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">HRMPlan</label>
+                                                            <div class="col-lg-6">
+                                                                <select class="form-control" tabindex="5">
+                                                                    <option>
+                                                                        Gold
+                                                                    </option>
+                                                                    <option>
+                                                                        Silver
+                                                                    </option>
+                                                                    <option>
+                                                                        Platinum
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">PaymentType</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.PaymentType}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-2 control-label">PaymentStatus</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="text" class="form-control" id="l-name" placeholder={{Contact.PaymentStatus}}>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-offset-2 col-lg-10">
+                                                                @*<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>*@
+                                                                <button type="submit" class="btn btn-primary">Update</button>
+                                                                <button type="button" class="btn btn-danger">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </section>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+                @RenderBody()
+
+            </section>
+        </section>
+    </div>
+
+    <!-- container section start -->
+    <!-- javascripts -->
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- bootstrap -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="~/Content/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- charts scripts -->
+    <script src="~/Content/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="~/Content/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="~/Content/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="~/Content/js/owl.carousel.js"></script>
+    <!-- jQuery full calendar -->
+    <script src="~/Content/assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+    <!--script for this page only-->
+    <script src="~/Content/js/calendar-custom.js"></script>
+    <!-- custom select -->
+    <script src="~/Content/js/jquery.customSelect.min.js"></script>
+    <!--custome script for all page-->
+    <script src="~/Content/js/scripts.js"></script>
+    <!-- custom script for this page-->
+    <script src="~/Content/js/sparkline-chart.js"></script>
+    <script src="~/Content/js/easy-pie-chart.js"></script>
+    <script>
+
+        //knob
+        $(function () {
+            $(".knob").knob({
+                'draw': function () {
+                    $(this.i).val(this.cv + '%')
+                }
+            })
+        });
+
+        //carousel
+        $(document).ready(function () {
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+            });
+        });
+
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+    </script>
+
+
+    @*<script>
+
+                var demoApp = angular.module("DemoApp", []);
+                //demoApp.controller("myController1", function ($scope) {
+                //    $scope.name = "Test DemoApp";
+                //});
+
+                demoApp.controller('myController1', function ($scope, ContactService) { //inject ContactService
+                    $scope.Contact = null;
+                    ContactService.GetCompanyDetails().then(function (d) {
+                        $scope.Contact = d.data; // Success
+                        $scope.namedemo = d.data.name;
+                    }, function () {
+                        alert('Failed'); // Failed
+                    });
+                })
+        .factory('ContactService', function ($http) { // here I have created a factory which is a populer way to create and configure services
+
+            var fac = {};
+            fac.GetCompanyDetails = function () {
+
+                return $http.get('/CompanyMaster/GetCompanyDetails');
+            }
+            return fac;
+        });
+
+
+
+            </script>*@
+
+    <script src="~/Scripts/AngularController/MasterPage.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

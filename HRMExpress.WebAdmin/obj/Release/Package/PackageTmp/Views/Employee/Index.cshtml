@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div ng-app="MyApp">
+
+    <div ng-controller="myController">
+        <h2>{{EmployeeName}}  Employee List</h2>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr> <th>FirstName</th><th>Designation</th><th>DepartmentName</th> </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items | orderBy:'FirstName'">
+                    <td>
+                        {{item.FirstName}}
+                    </td>
+                    <td>
+                        {{item.Designation}}
+                    </td>
+                    <td>
+                        {{item.DepartmentName}}
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var myApp = angular.module("MyApp", []);
+
+        var information = {
+            Name: "Angular Js ",
+            items : []
+        };
+        myApp.run(function ($http) {
+
+            $http.get('@Url.Action("GetAllEmp", "Employee")').success(function (data) {
+                //alert(data);
+                angular.forEach(data, function (event, key) {
+
+                    information.items.push({ FirstName: event.FirstName, Designation: event.Designation, DepartmentName: event.DepartmentName });
+                    //alert(event.Name);
+                });
+            });
+
+        });
+
+        myApp.controller("myController", function ($scope) {
+
+           // $scope.EmployeeName = information.Name;
+            $scope.items = information.items;
+        });
+    </script>
+}

@@ -1,0 +1,5 @@
+E:\TestAngular\HRMExpress\HRMExpress.Core\bin\Release\HRMExpress.Core.dll
+E:\TestAngular\HRMExpress\HRMExpress.Core\bin\Release\HRMExpress.Core.pdb
+E:\TestAngular\HRMExpress\HRMExpress.Core\obj\Release\HRMExpress.Core.csprojResolveAssemblyReference.cache
+E:\TestAngular\HRMExpress\HRMExpress.Core\obj\Release\HRMExpress.Core.dll
+E:\TestAngular\HRMExpress\HRMExpress.Core\obj\Release\HRMExpress.Core.pdb

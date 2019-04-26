@@ -1,0 +1,11 @@
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\HRMExpress.Service.dll
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\HRMExpress.Service.pdb
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\HRMExpress.Core.dll
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\HRMExpress.Data.dll
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\EntityFramework.dll
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\HRMExpress.Core.pdb
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\HRMExpress.Data.pdb
+E:\TestAngular\HRMExpress\HRMExpress.Service\bin\Release\EntityFramework.xml
+E:\TestAngular\HRMExpress\HRMExpress.Service\obj\Release\HRMExpress.Service.csprojResolveAssemblyReference.cache
+E:\TestAngular\HRMExpress\HRMExpress.Service\obj\Release\HRMExpress.Service.dll
+E:\TestAngular\HRMExpress\HRMExpress.Service\obj\Release\HRMExpress.Service.pdb
